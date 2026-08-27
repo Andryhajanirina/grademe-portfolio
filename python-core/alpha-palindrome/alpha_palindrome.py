@@ -1,8 +1,3 @@
 def is_alpha_palindrome(text: str) -> bool:
-    if text == "" or text is None:
-        return False
-    clean_str = "".join(char.lower() for char in text if char.isalpha())
-    if clean_str:
-        return clean_str == clean_str[::-1]
-    else:
-        return False
+    clean_text = "".join([c.lower() for c in text if c.isalpha()])
+    return clean_text == clean_text[::-1] if clean_text else False
